@@ -1,0 +1,6 @@
+DatabricksAccounts
+| where TimeGenerated > ago(24h)
+| where Type == "DatabricksAccounts"
+| extend User = tostring(parse_json(RequestParams).user)
+| project ActionName, User
+| summarize count() by ActionName, User

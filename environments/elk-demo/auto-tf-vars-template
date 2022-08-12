@@ -1,0 +1,8 @@
+tags = { Owner = "you@databricks.com" }
+
+prefix = "yourname"
+aws_region = "us-east-1"
+aws_zone = "us-east-1a"
+
+databricks_host = "..."
+databricks_token = "..."

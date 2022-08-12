@@ -1,0 +1,6 @@
+DatabricksDBFS
+| where TimeGenerated > ago(24h)
+| where OperationName == "Microsoft.Databricks/dbfs/create"
+| extend path = parse_json(RequestParams)["path"]
+| summarize count() by tostring(path)
+| sort by count_
